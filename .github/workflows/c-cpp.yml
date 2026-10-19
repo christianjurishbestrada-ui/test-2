@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+
+    int choice;
+    int coin;
+    
+    cout << "==========================" << endl;
+    cout << "    COIN TOSS CHALLENGE" << endl;
+    cout << "==========================" << endl;
+
+    cout << "Choose your prediction:" << endl;
+    cout << "1. Heads" << endl;
+    cout << "2. Tails" << endl;
+    cout << "Your choice: ";
+    cin >> choice;
+
+    if (choice != 1 && choice != 2) {
+        cout << "Invalid choice!" << endl;
+        return 0;
+    }
+
+    coin = rand() % 2 + 1;
+
+    cout << endl;
+
+    if (coin == 1) {
+        cout << "The coin landed on HEADS!" << endl;
+    } else {
+        cout << "The coin landed on TAILS!" << endl;
+    }
+
+    if (choice == coin) {
+        cout << "Congratulations! You guessed correctly!"
+             << endl;
+    } else {
+        cout << "Sorry! Better luck next time!" << endl;
+    }
+
+    return 0;
+}
